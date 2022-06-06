@@ -1,4 +1,4 @@
-import { test } from '../configs/customTest';
+import { test } from '../../configs/customTest';
 import { expect } from '@playwright/test';
 
 test.describe('when open a page with basic auth', async () => {

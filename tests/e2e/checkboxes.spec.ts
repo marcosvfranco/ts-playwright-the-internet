@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('when opening checkbox page', () => {
 
-  test.beforeEach(async ({ page }, testInfo) => {
+  test.beforeEach(async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/checkboxes');
   })
 

@@ -6,13 +6,13 @@ test.describe('when opening key_presses page', () => {
     await page.goto('https://the-internet.herokuapp.com/key_presses');
   })
 
-  test.only('and an input is displayed, so something is typed and registered in the page', async ({ page }) => {
+  test('and an input is displayed, so something is typed and registered in the page', async ({ page }) => {
 
     const input = page.locator('input#target');
     const characterToBeTyped = 'A';
     await input.type(characterToBeTyped);
 
-    expect(await page.locator('#result')).toHaveText(`You entered: ${characterToBeTyped}`);
+    await expect(page.locator('#result')).toHaveText(`You entered: ${characterToBeTyped}`);
   });
 
 })

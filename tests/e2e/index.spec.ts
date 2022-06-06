@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('when opening index page', () => {
 
-  test.beforeEach(async ({ page }, testInfo) => {
+  test.beforeEach(async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/');
   })
 
@@ -13,11 +13,11 @@ test.describe('when opening index page', () => {
     await expect(subTitle).toBeVisible();
   });
 
-  test('then a list of 44 links is displayed', async({ page }) => {
-    const linkList = await page.locator('div#content > ul > li');
-    for(let i = 0; i < await linkList.count(); i++) {
-      expect(linkList.nth(i)).toHaveProperty('href')
-    }
-    await expect(linkList).toHaveCount(44);
+    test('then a list of 44 links is displayed', async({ page }) => {
+      const linkList = await page.locator('div#content > ul > li > a');
+      for(let i = 0; i < await linkList.count(); i++) {
+        expect(await linkList.nth(i).getAttribute('href')).not.toBeNull();
+      }
+      await expect(linkList).toHaveCount(44);
   })
 })

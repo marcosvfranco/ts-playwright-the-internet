@@ -13,7 +13,7 @@ test.describe('when opening dropdown page', () => {
     const dropdown = page.locator('select#dropdown')
     await dropdown.selectOption({ index: 1})
     
-    expect(await dropdown.locator('option[value="1"]'))
+    await expect(dropdown.locator('option[value="1"]'))
         .toHaveAttribute('selected', 'selected');
 
     // There is another way to select an option that do the action
@@ -21,7 +21,7 @@ test.describe('when opening dropdown page', () => {
 
     await page.selectOption('select#dropdown', { index: 2});
 
-    expect(await dropdown.locator('option[value="2"]'))
+    await expect(dropdown.locator('option[value="2"]'))
         .toHaveAttribute('selected', 'selected');
 
   });
