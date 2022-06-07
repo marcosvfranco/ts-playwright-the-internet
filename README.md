@@ -9,4 +9,5 @@ You can use and apply it to test another real world websites!
 [ESLint](https://eslint.org/docs/user-guide/configuring/)
 
 ## CI/CD
-TBD
+[GitHub Actions](https://docs.github.com/en/actions)
+
