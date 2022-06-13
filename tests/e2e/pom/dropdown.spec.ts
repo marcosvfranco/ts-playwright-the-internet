@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { DropdownPage } from '../../page-objects/DropdownPage'
+import { DropdownPage } from '../../../page-objects/DropdownPage'
 
 test.describe('when opening dropdown page', () => {
 
