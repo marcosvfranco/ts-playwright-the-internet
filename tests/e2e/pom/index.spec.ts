@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { IndexPage } from '../../page-objects/IndexPage';
+import { IndexPage } from '../../../page-objects/IndexPage';
 
 test.describe('<POM> when opening index page', () => {
 
